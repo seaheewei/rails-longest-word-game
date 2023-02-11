@@ -1,0 +1,13 @@
+<div class=pt-5>
+  <% if @in_grid && @valid %>
+    Congratulations! <strong><%=@answer.upcase%></strong> is a valid English word!
+  <% elsif @in_grid && !@valid %>
+    Sorry but <strong><%=@answer.upcase%></strong> does not seem to be a valid English word...
+  <% else %>
+    Sorry but <strong><%=@answer.upcase%></strong>  can't be built out of <%=@letters%>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to("Start a new game", new_path) %>
